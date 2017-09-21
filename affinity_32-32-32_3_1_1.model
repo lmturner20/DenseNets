@@ -1,3 +1,7 @@
+rootFolderPerigee = "/home/dkoes/PDBbind/refined-set" #use on Apogee/Perigee
+rootFolderCluster = "/net/pulsar/home/koes/dkoes/PDBbind/refined-set" #use on the Cluster
+
+
 layer {
 
   name: "data"
@@ -32,7 +36,7 @@ layer {
 
     has_affinity: true
 
-    root_folder: "../../"
+    root_folder: rootFolderPerigee
 
   }
 
@@ -84,8 +88,7 @@ layer {
 
     random_translate: 2
 
-    root_folder: "../../"
-
+    root_folder: rootFolderPerigee
   }
 
 }
