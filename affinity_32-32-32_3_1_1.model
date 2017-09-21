@@ -1,5 +1,5 @@
-rootFolderPerigee = "/home/dkoes/PDBbind/refined-set" #use on Apogee/Perigee
-rootFolderCluster = "/net/pulsar/home/koes/dkoes/PDBbind/refined-set" #use on the Cluster
+# "/home/dkoes/PDBbind/refined-set" - use on Apogee/Perigee
+# "/net/pulsar/home/koes/dkoes/PDBbind/refined-set" - use on the Cluster
 
 
 layer {
@@ -36,7 +36,7 @@ layer {
 
     has_affinity: true
 
-    root_folder: rootFolderPerigee
+    root_folder: "/home/dkoes/PDBbind/refined-set"
 
   }
 
@@ -88,7 +88,7 @@ layer {
 
     random_translate: 2
 
-    root_folder: rootFolderPerigee
+    root_folder: "/home/dkoes/PDBbind/refined-set"
   }
 
 }
