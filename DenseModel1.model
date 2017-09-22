@@ -351,6 +351,7 @@ layer {
     stride: 2
 
   }
+}
 
 layer {
 
