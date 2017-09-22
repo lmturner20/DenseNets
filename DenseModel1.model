@@ -186,8 +186,6 @@ layer {
 
 }
 
-}
-
 layer {
 
   name: "unit2_conv1"
