@@ -16,8 +16,8 @@ export PYTHONPATH=/net/pulsar/home/koes/dkoes/local/python:$PYTHONPATH
 #for some reason when the job starts on the node, it auto-cd's to your home dir
 cd $PBS_O_WORKDIR
 
-pdb=`sed -n "${PBS_ARRAYID}p" pdbs`
-python ~/scripts/train.py -m DenseModel2.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/types/all_0.5_0_ -t 1000 -i 100000 --reduced -o densemodel2 --base_lr .001
+#pdb=`sed -n "${PBS_ARRAYID}p" pdbs`
+python ~/scripts/train.py -m DenseModel2.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/types/all_0.5_0_ -t 1000 -i 100000 --reduced -o densemodel2 --base_lr .001 -q dept_gpu
 
 echo $cmd
 $cmd
