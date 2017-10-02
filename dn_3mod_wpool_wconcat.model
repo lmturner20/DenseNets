@@ -350,6 +350,7 @@ layer {
     kernel_size: 2
     stride: 2
   }
+}
 
 #third module
 layer {
