@@ -195,6 +195,7 @@ layer {
     kernel_size: 2
     stride: 2
   }
+}
 
 #second module
 layer {
@@ -327,6 +328,7 @@ layer {
     kernel_size: 2
     stride: 2
   }
+}
 
 #third module
 layer {
@@ -459,6 +461,7 @@ layer {
     kernel_size: 2
     stride: 2
   }
+}
 
 layer {
     name: "split"
