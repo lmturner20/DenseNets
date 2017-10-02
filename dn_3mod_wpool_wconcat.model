@@ -494,6 +494,7 @@ layer {
     kernel_size: 2
     stride: 2
   }
+}
 
 layer {
     name: "split"
