@@ -22,7 +22,7 @@ layer {
     shuffle: false
     balanced: false
     has_affinity: true
-    root_folder: "/home/dkoes/PDBbind/refined-set"
+    root_folder: "/net/pulsar/home/koes/dkoes/PDBbind/refined-set"
   }
 }
 
@@ -49,7 +49,7 @@ layer {
     has_affinity: true
     random_rotation: true
     random_translate: 2
-    root_folder: "/home/dkoes/PDBbind/refined-set"
+    root_folder: "/net/pulsar/home/koes/dkoes/PDBbind/refined-set"
   }
 }
 
