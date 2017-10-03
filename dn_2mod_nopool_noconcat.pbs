@@ -14,7 +14,7 @@ export PYTHONPATH=/net/pulsar/home/koes/dkoes/local/python:$PYTHONPATH
 
 cd $PBS_O_WORKDIR
 
-python ~/scripts/train.py -m dn_2mod_nopool_noconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -t 1000 -i 100000 --reduced -o dn_2mod_nopool_noconcat --base_lr .005
+python ~/scripts/train.py -m dn_2mod_nopool_noconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -t 1000 -i 100000 --reduced -o dn_2mod_nopool_noconcat --base_lr .005 -n
 #python ~/scripts/train.py -m dn_2mod_wpool_noconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -t 1000 -i 100000 --reduced -o densemodel2 --base_lr .005
 #python ~/scripts/train.py -m dn_2mod_nopool_wconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -t 1000 -i 100000 --reduced -o densemodel2 --base_lr .005
 #python ~/scripts/train.py -m dn_2mod_wpool_wconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -t 1000 -i 100000 --reduced -o densemodel2 --base_lr .005
