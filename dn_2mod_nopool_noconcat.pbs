@@ -19,7 +19,7 @@ python ~/scripts/train.py -m dn_2mod_nopool_noconcat.model -p /net/pulsar/home/k
 python ~/scripts/train.py -m dn_2mod_nopool_noconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -t 1000 -i 100000 --reduced -o dn_2mod_nopool_noconcat --base_lr .005 -n 2 &
 wait
 
-python ~/scripts/combine_fold_results.py -o dn_2mod_nopool_noconcat.model
+python ~/scripts/combine_fold_results.py -o dn_2mod_nopool_noconcat
 
 $cmd
 
