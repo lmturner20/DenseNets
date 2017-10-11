@@ -322,7 +322,7 @@ layer {
   name: "unit3_pool"
   type: "Pooling"
   bottom: "unit3_conv2"
-  top: "unit2_pool"
+  top: "unit3_pool"
   pooling_param {
     pool: MAX
     kernel_size: 2
@@ -455,7 +455,7 @@ layer {
   name: "unit4_pool"
   type: "Pooling"
   bottom: "unit3_conv3"
-  top: "unit2_pool"
+  top: "unit4_pool"
   pooling_param {
     pool: MAX
     kernel_size: 2
@@ -466,7 +466,7 @@ layer {
 layer {
     name: "split"
     type: "Split"
-    bottom: "unit2_pool"
+    bottom: "unit4_pool"
     top: "split"
 }
 
