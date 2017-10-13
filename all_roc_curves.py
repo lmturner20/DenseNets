@@ -5,7 +5,7 @@ import sklearn, argparse
 import sklearn.metrics
 
 _2npncf = "/net/pulsar/home/koes/lmt72/DenseNets/DenseNets/dn_2mod_nopool_noconcat.auc.finaltest"
-_2npwcf = "/net/pulsar/home/koes/lmt72/DenseNets/DenseNets/dn_2mod_nopool_wconcat.auc.finaltest"
+#_2npwcf = "/net/pulsar/home/koes/lmt72/DenseNets/DenseNets/dn_2mod_nopool_wconcat.auc.finaltest"
 _2wpncf = "/net/pulsar/home/koes/lmt72/DenseNets/DenseNets/dn_2mod_wpool_noconcat.auc.finaltest"
 _2wpwcf = "/net/pulsar/home/koes/lmt72/DenseNets/DenseNets/dn_2mod_wpool_wconcat.auc.finaltest"
 _3npncf = "/net/pulsar/home/koes/lmt72/DenseNets/DenseNets/dn_3mod_nopool_noconcat.auc.finaltest"
@@ -27,18 +27,18 @@ for line in _2npncfile:
 _2npncfpr, _2npnctpr, _ = sklearn.metrics.roc_curve(_2npnctrue,_2npncscore)
 _2npnc = sklearn.metrics.roc_auc_score(_2npnctrue,_2npncscore)
 
-_2npwctrue = [] #dn_2mod_nopool_wconcat
-_2npwcscore = []
-_2npwcfile = open(_2npwcf,'r')
-for line in _2npwcfile:
-    if line.startswith('#'):
-        pass
-    else:
-        data= line.split()
-        _2npwctrue.append( bool(float(data[0])) )
-        _2npwcscore.append( float(data[1].strip()) )
-_2npwcfpr, _2npwctpr, _ = sklearn.metrics.roc_curve(_2npwctrue,_2npwcscore)
-_2npwc = sklearn.metrics.roc_auc_score(_2npwctrue,_2npwcscore)
+#_2npwctrue = [] #dn_2mod_nopool_wconcat
+#_2npwcscore = []
+#_2npwcfile = open(_2npwcf,'r')
+#for line in _2npwcfile:
+#    if line.startswith('#'):
+#        pass
+#    else:
+#        data= line.split()
+#        _2npwctrue.append( bool(float(data[0])) )
+#        _2npwcscore.append( float(data[1].strip()) )
+#_2npwcfpr, _2npwctpr, _ = sklearn.metrics.roc_curve(_2npwctrue,_2npwcscore)
+#_2npwc = sklearn.metrics.roc_auc_score(_2npwctrue,_2npwcscore)
 
 _2wpnctrue = [] #dn_2mod_wpool_noconcat
 _2wpncscore = []
@@ -121,7 +121,7 @@ _3wpwc = sklearn.metrics.roc_auc_score(_3wpwctrue,_3wpwcscore)
 
 fig = plt.figure(figsize=(8,8))
 plt.plot(_2npncfpr,_2npnctpr,label='2NPNC (AUC=%.4f)'%(_2npnc),linewidth=8,color='b')
-plt.plot(_2npwcfpr,_2npwctpr,label='2NPWC (AUC=%.4f)'%(_2npwc),linewidth=8,color='g')
+#plt.plot(_2npwcfpr,_2npwctpr,label='2NPWC (AUC=%.4f)'%(_2npwc),linewidth=8,color='g')
 plt.plot(_2wpncfpr,_2wpnctpr,label='2WPNC (AUC=%.4f)'%(_2wpnc),linewidth=8,color='r')
 plt.plot(_2wpwcfpr,_2wpwctpr,label='2WPWC (AUC=%.4f)'%(_2wpwc),linewidth=8,color='c')
 
