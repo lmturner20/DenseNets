@@ -1,6 +1,8 @@
 from Bio.PDB.PDBParser import PDBParser
 import argparse
 import caffe
+import os, sys
+os.environ["GLOG_minloglevel"] = "10"
 
 def evaluate_fold(testfile, caffemodel, modelname):
     '''Evaluate the passed model and the specified test set.
