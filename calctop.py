@@ -1,5 +1,6 @@
 from Bio.PDB.PDBParser import PDBParser
 import argparse
+import caffe
 
 def evaluate_fold(testfile, caffemodel, modelname):
     '''Evaluate the passed model and the specified test set.
