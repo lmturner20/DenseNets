@@ -4,10 +4,10 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('-m','--model',type=str,required=True)
 parser.add_argument('-p','--prefix',type=str,required=True) #same for caffemodel and test sets
-modelname = model
+modelname = args.model
 
-testfile = (prefix + ".0.rmsd.finaltest")
-caffemodel = (prefix + ".0_iter_100000.caffemodel")
+testfile = (args.prefix + ".0.rmsd.finaltest")
+caffemodel = (args.prefix + ".0_iter_100000.caffemodel")
 result = evaluate_fold(testfile, caffemodel, modelname)
 print (result)
 
