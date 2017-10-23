@@ -2,9 +2,9 @@ from Bio.PDB.PDBParser import PDBParser
 import argparse
 
 parser = argparse.ArgumentParser()
-args = parser.parse_args()
 parser.add_argument('-m','--model',type=str,required=True)
 parser.add_argument('-p','--prefix',type=str,required=True) #same for caffemodel and test sets
+args = parser.parse_args()
 modelname = args.model
 
 testfile = (args.prefix + ".0.rmsd.finaltest")
