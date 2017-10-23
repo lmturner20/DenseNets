@@ -2,8 +2,8 @@ from Bio.PDB.PDBParser import PDBParser
 import numpy as np
 import os, sys
 os.environ["GLOG_minloglevel"] = "10"
-sys.path.append("/home/dkoes/git/gninascripts/")
-sys.path.append("/net/pulsar/home/koes/dkoes/git/gninascripts/")
+#sys.path.append("/home/dkoes/git/gninascripts/")
+#sys.path.append("/net/pulsar/home/koes/dkoes/git/gninascripts/")
 
 import train, predict
 import matplotlib, caffe
