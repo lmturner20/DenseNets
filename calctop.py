@@ -1,9 +1,16 @@
 from Bio.PDB.PDBParser import PDBParser
-import argparse
-import caffe
+import numpy as np
 import os, sys
 os.environ["GLOG_minloglevel"] = "10"
-import train
+sys.path.append("/home/dkoes/git/gninascripts/")
+sys.path.append("/net/pulsar/home/koes/dkoes/git/gninascripts/")
+
+import train, predict
+import matplotlib, caffe
+import matplotlib.pyplot as plt
+import glob, re, sklearn, collections, argparse, sys
+import sklearn.metrics
+import scipy.stats
 
 def evaluate_fold(testfile, caffemodel, modelname):
     '''Evaluate the passed model and the specified test set.
