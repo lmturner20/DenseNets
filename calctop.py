@@ -1,4 +1,5 @@
 from Bio.PDB.PDBParser import PDBParser
+import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-m','--model',type=str,required=True)
