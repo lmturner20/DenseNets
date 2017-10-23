@@ -3,6 +3,7 @@ import argparse
 import caffe
 import os, sys
 os.environ["GLOG_minloglevel"] = "10"
+import train, predict
 
 def evaluate_fold(testfile, caffemodel, modelname):
     '''Evaluate the passed model and the specified test set.
