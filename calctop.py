@@ -1,24 +1,24 @@
 from Bio.PDB.PDBParser import PDBParser
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument('-m','--model',type=str,required=True)
-    parser.add_argument('-p','--prefix',type=str,required=True) #same for caffemodel and test sets
-    modelname = model
+parser = argparse.ArgumentParser()
+parser.add_argument('-m','--model',type=str,required=True)
+parser.add_argument('-p','--prefix',type=str,required=True) #same for caffemodel and test sets
+modelname = model
 
-    testfile = (prefix + ".0.rmsd.finaltest")
-    caffemodel = (prefix + ".0_iter_100000.caffemodel")
-    result = evaluate_fold(testfile, caffemodel, modelname)
-    print (result)
+testfile = (prefix + ".0.rmsd.finaltest")
+caffemodel = (prefix + ".0_iter_100000.caffemodel")
+result = evaluate_fold(testfile, caffemodel, modelname)
+print (result)
 
-    testfile = (prefix + ".1.rmsd.finaltest")
-    caffemodel = (prefix + ".1_iter_100000.caffemodel")
-    result = evaluate_fold(testfile, caffemodel, modelname)
-    print (result)
+testfile = (prefix + ".1.rmsd.finaltest")
+caffemodel = (prefix + ".1_iter_100000.caffemodel")
+result = evaluate_fold(testfile, caffemodel, modelname)
+print (result)
 
-    testfile = (prefix + ".2.rmsd.finaltest")
-    caffemodel = (prefix + ".2_iter_100000.caffemodel")
-    result = evaluate_fold(testfile, caffemodel, modelname)
-    print (result)
+testfile = (prefix + ".2.rmsd.finaltest")
+caffemodel = (prefix + ".2_iter_100000.caffemodel")
+result = evaluate_fold(testfile, caffemodel, modelname)
+print (result)
 
 def evaluate_fold(testfile, caffemodel, modelname):
     '''Evaluate the passed model and the specified test set.
