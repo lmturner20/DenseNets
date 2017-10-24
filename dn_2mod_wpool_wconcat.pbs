@@ -3,7 +3,7 @@
 #PBS -j oe
 #PBS -l nodes=1:ppn=1:gpus=3
 #PBS -l walltime=24:00:00:00
-#PBS -q dept_gpu
+#PBS -q dept_gpu_12GB
 
 echo Running on `hostname`
 echo workdir $PBS_O_WORKDIR
