@@ -46,7 +46,7 @@ def evaluate_fold(testfile, caffemodel, modelname):
             else:
                 batch_size = res['affout'].shape[0]
             i = 0
-    print ("3")
+            print ("3")
 
         if 'labelout' in res:
             label = float(res['labelout'][i])
