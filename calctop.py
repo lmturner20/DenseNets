@@ -89,6 +89,7 @@ if __name__ == '__main__':
     print ("caffemodel:" + caffemodel)
     print ("modelname:" + modelname)
     result = evaluate_fold(testfile, caffemodel, modelname)
+    print ("evaluate_fold returned")
     print (result)
 
     testfile = (prefix + ".1.rmsd.finaltest")
