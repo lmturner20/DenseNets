@@ -85,6 +85,9 @@ if __name__ == '__main__':
     testfile = (args.prefix + ".0.rmsd.finaltest")
     caffemodel = (args.prefix + ".0_iter_100000.caffemodel")
     print ("train:" + train.__file__)
+    print ("testfile:" + testfile)
+    print ("caffemodel:" + caffemodel)
+    print ("modelname:" + modelname)
     result = evaluate_fold(testfile, caffemodel, modelname)
     print (result)
 
