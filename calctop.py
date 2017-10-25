@@ -76,7 +76,6 @@ def evaluate_fold(testfile, caffemodel, modelname):
     return ret
 
 if __name__ == '__main__':
-    print ("hello")
     parser = argparse.ArgumentParser()
     parser.add_argument('-m','--model',type=str,required=True)
     parser.add_argument('-p','--prefix',type=str,required=True) #same for caffemodel and test sets
@@ -85,9 +84,7 @@ if __name__ == '__main__':
 
     testfile = (args.prefix + ".0.rmsd.finaltest")
     caffemodel = (args.prefix + ".0_iter_100000.caffemodel")
-    print ("testfile:" + testfile)
-    print ("caffemodel:" + caffemodel)
-    print ("modelname:" + modelname)
+    print ("train:" + train._file_)
     result = evaluate_fold(testfile, caffemodel, modelname)
     print (result)
 
