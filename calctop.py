@@ -76,6 +76,50 @@ def evaluate_fold(testfile, caffemodel, modelname):
     os.remove(test_model)
     return ret
 
+
+def analyze_results(results, outname, uniquify=None):
+    '''Compute error metrics from resuls.  RMSE, Pearson, Spearman.
+    If uniquify is set, AUC and top-1 percentage are also computed,
+    uniquify can be None, 'affinity', or 'pose' and is set with
+    the all training set to select the pose used for scoring.
+    Returns tuple:
+    (RMSE, Pearson, Spearman, AUCpose, AUCaffinity, top-1)
+    Writes (correct,prediction) pairs to outname.predictions
+    '''
+
+    #calc auc before reduction
+    if uniquify and len(results[0]) > 5:
+        labels = np.array([r[4] for r in results])
+        posescores = np.array([r[5] for r in results])
+        predictions = np.array([r[1] for r in results])
+        aucpose = sklearn.metrics.roc_auc_score(labels, posescores)
+        aucaff = sklearn.metrics.roc_auc_score(labels, predictions)
+
+    if uniquify == 'affinity':
+        results = reduce_results(results, 1)
+    elif uniquify == 'pose':
+        results = reduce_results(results, 5)
+
+    predictions = np.array([r[1] for r in results])
+    correctaff = np.array([abs(r[0]) for r in results])
+    #(correct, prediction, receptor, ligand, label (optional), posescore (optional))    
+
+    rmse = np.sqrt(sklearn.metrics.mean_squared_error(correctaff, predictions))
+    R = scipy.stats.pearsonr(correctaff, predictions)[0]
+    S = scipy.stats.spearmanr(correctaff, predictions)[0]
+    out = open('%s.predictions'%outname,'w')
+    for (c,p) in zip(correctaff,predictions):
+        out.write('%f %f\n' % (c,p))
+    out.write('#RMSD %f\n'%rmse)
+    out.write('#R %f\n'%R)
+
+    if uniquify and len(results[0]) > 5:
+        labels = np.array([r[4] for r in results])
+        top = np.count_nonzero(labels > 0)/float(len(labels))
+        return (rmse, R, S, aucpose, aucaff, top)
+    else:
+return (rmse, R, S)
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-m','--model',type=str,required=True)
@@ -85,15 +129,15 @@ if __name__ == '__main__':
 
     testfile = (args.prefix + "train0.types")
     caffemodel = (args.model + ".0_iter_100000.caffemodel")
-    result = evaluate_fold(testfile, caffemodel, modelname)
-    print (result)
-
+    results = evaluate_fold(testfile, caffemodel, modelname)
+    print analyze_results(results, prefix + ".results", "affinity")
+    
     testfile = (args.prefix + "train1.types")
     caffemodel = (args.model + ".1_iter_100000.caffemodel")
     result = evaluate_fold(testfile, caffemodel, modelname)
-    print (result)
+    #print (result)
 
     testfile = (args.prefix + "train2.types")
     caffemodel = (args.model + ".2_iter_100000.caffemodel")
     result = evaluate_fold(testfile, caffemodel, modelname)
-    print (result)
+    #print (result)
