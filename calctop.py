@@ -95,7 +95,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     modelname = (args.model + ".model")
 
-    testfile = (args.prefix)
+    testfile = (args.prefix + ".types")
     caffemodel = (args.model + ".0_iter_100000.caffemodel")
     print ("train:" + train.__file__)
     print ("testfile:" + testfile)
@@ -105,12 +105,12 @@ if __name__ == '__main__':
     print ("evaluate_fold returned")
     print (result)
 
-    testfile = (args.prefix)
+    testfile = (args.prefix + ".types")
     caffemodel = (args.model + ".1_iter_100000.caffemodel")
     result = evaluate_fold(testfile, caffemodel, modelname)
     print (result)
 
-    testfile = (args.prefix)
+    testfile = (args.prefix + ".types")
     caffemodel = (args.model + ".2_iter_100000.caffemodel")
     result = evaluate_fold(testfile, caffemodel, modelname)
     print (result)
