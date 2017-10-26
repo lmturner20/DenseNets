@@ -22,7 +22,7 @@ def evaluate_fold(testfile, caffemodel, modelname):
     print ("0")
     caffe.set_mode_gpu()
     print ("0.1")
-    test_model = prefix + '.%d.prototxt' % os.getpid()
+    test_model = args.prefix + '.%d.prototxt' % os.getpid()
     print ("0.2")
     print ("test_model:" + test_model)
     train.write_model_file(test_model, modelname, testfile, testfile, '')
