@@ -22,7 +22,7 @@ def evaluate_fold(testfile, caffemodel, modelname):
     print ("0")
     caffe.set_mode_gpu()
     print ("0.1")
-    test_model = (args.model + '.%d.prototxt' % os.getpid())
+    test_model = ('predict.%d.prototxt' % os.getpid())
     print ("0.2")
     print ("test_model:" + test_model)
     train.write_model_file(test_model, modelname, testfile, testfile, '')
@@ -95,7 +95,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     modelname = (args.model + ".model")
 
-    testfile = (args.prefix + ".0.rmsd.finaltest")
+    testfile = (args.prefix)
     caffemodel = (args.model + ".0_iter_100000.caffemodel")
     print ("train:" + train.__file__)
     print ("testfile:" + testfile)
@@ -105,12 +105,12 @@ if __name__ == '__main__':
     print ("evaluate_fold returned")
     print (result)
 
-    testfile = (args.prefix + ".1.rmsd.finaltest")
+    testfile = (args.prefix)
     caffemodel = (args.model + ".1_iter_100000.caffemodel")
     result = evaluate_fold(testfile, caffemodel, modelname)
     print (result)
 
-    testfile = (args.prefix + ".2.rmsd.finaltest")
+    testfile = (args.prefix)
     caffemodel = (args.model + ".2_iter_100000.caffemodel")
     result = evaluate_fold(testfile, caffemodel, modelname)
     print (result)
