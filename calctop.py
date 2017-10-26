@@ -93,10 +93,10 @@ if __name__ == '__main__':
     parser.add_argument('-m','--model',type=str,required=True)
     parser.add_argument('-p','--prefix',type=str,required=True) #same for caffemodel and test sets
     args = parser.parse_args()
-    modelname = args.model
+    modelname = (args.model + ".model")
 
     testfile = (args.prefix + ".0.rmsd.finaltest")
-    caffemodel = (args.prefix + ".0_iter_100000.caffemodel")
+    caffemodel = (args.model + ".0_iter_100000.caffemodel")
     print ("train:" + train.__file__)
     print ("testfile:" + testfile)
     print ("caffemodel:" + caffemodel)
@@ -105,12 +105,12 @@ if __name__ == '__main__':
     print ("evaluate_fold returned")
     print (result)
 
-    testfile = (prefix + ".1.rmsd.finaltest")
-    caffemodel = (prefix + ".1_iter_100000.caffemodel")
+    testfile = (args.prefix + ".1.rmsd.finaltest")
+    caffemodel = (args.model + ".1_iter_100000.caffemodel")
     result = evaluate_fold(testfile, caffemodel, modelname)
     print (result)
 
-    testfile = (prefix + ".2.rmsd.finaltest")
-    caffemodel = (prefix + ".2_iter_100000.caffemodel")
+    testfile = (args.prefix + ".2.rmsd.finaltest")
+    caffemodel = (args.model + ".2_iter_100000.caffemodel")
     result = evaluate_fold(testfile, caffemodel, modelname)
     print (result)
