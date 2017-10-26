@@ -119,6 +119,19 @@ def analyze_results(results, outname, uniquify=None):
         return (rmse, R, S, aucpose, aucaff, top)
     else:
         return (rmse, R, S)
+    
+def reduce_results(results, index):
+    '''Return results with only one tuple for every receptor value,
+    taking the one with the max value at index in the tuple (predicted affinity or pose score)
+    '''
+    res = dict() #indexed by receptor
+    for r in results:
+        name = r[2]
+        if name not in res:
+            res[name] = r
+        elif res[name][index] < r[index]:
+            res[name] = r
+    return res.values()
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -129,7 +142,8 @@ if __name__ == '__main__':
 
     testfile = (args.prefix + "train0.types")
     caffemodel = (args.model + ".0_iter_100000.caffemodel")
-    results = evaluate_fold(testfile, caffemodel, modelname)
+    #results = evaluate_fold(testfile, caffemodel, modelname)
+    results = (-6.66349983215332, 3.154841184616089, '4v27/4v27_rec.gninatypes', '4v27/4v27_ligand3_21.gninatypes', 0.0, 0.037663646042346954), (-6.66349983215332, 3.744670867919922, '4v27/4v27_rec.gninatypes', '4v27/4v27_ligand3_22.gninatypes', 0.0, 0.2502797842025757), (-6.66349983215332, 3.6970040798187256, '4v27/4v27_rec.gninatypes', '4v27/4v27_ligand3_23.gninatypes', 0.0, 0.1580556482076645), (-6.66349983215332, 3.50762677192688, '4v27/4v27_rec.gninatypes', '4v27/4v27_ligand3_24.gninatypes', 0.0, 0.10821964591741562), (-7.09689998626709, 6.032853603363037, '4w97/4w97_rec.gninatypes', '4w97/4w97_ligand3_0.gninatypes', 0.0, 0.787858784198761), (-7.09689998626709, 6.591735363006592, '4w97/4w97_rec.gninatypes', '4w97/4w97_ligand3_1.gninatypes', 0.0, 0.021299827843904495)
     print analyze_results(results, args.prefix + ".results", "affinity")
     
     #testfile = (args.prefix + "train1.types")
