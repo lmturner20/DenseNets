@@ -5,7 +5,7 @@ os.environ["GLOG_minloglevel"] = "10"
 sys.path.append("/home/dkoes/git/gninascripts/")
 sys.path.append("/net/pulsar/home/koes/dkoes/git/gninascripts/")
 
-import train#, predict
+import train, predict
 import matplotlib, caffe
 import matplotlib.pyplot as plt
 import glob, re, sklearn, collections, argparse, sys
