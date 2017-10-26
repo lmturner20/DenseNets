@@ -118,7 +118,7 @@ def analyze_results(results, outname, uniquify=None):
         top = np.count_nonzero(labels > 0)/float(len(labels))
         return (rmse, R, S, aucpose, aucaff, top)
     else:
-    return (rmse, R, S)
+        return (rmse, R, S)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
