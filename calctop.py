@@ -77,10 +77,10 @@ def evaluate_fold(testfile, caffemodel, modelname):
     return ret
 
 def find_top_ligand(results):
-    numTargets = len(results)
+    numTargets = 0
     currentTarget = ("")
-    highestLigands = [numTargets]
-    index = 0
+    #highestLigands = [numTargets]
+    #index = 0
     correctPoses = 0
     highestPose = 0
     rightAnswer = False
@@ -89,17 +89,23 @@ def find_top_ligand(results):
         if (r[2] == currentTarget):
             if (r[5] > highestPose):
                 highestPose = r[5]
-                highestLigand = r[3]
+                #highestLigand = r[3]
                 if (r[4] == 1):
                     rightAnswer = True
                 else:
                     rightAnswer = False
             else:
                 currentTarget = r[2];
-                highestLigands[index] = highestLigand;
-                index = index + 1
-            if (rightAnswer == True):
-                correctPoses = correctPoses + 1
+                highestPose = 0
+                numTargets = numTargets + 1
+                #highestLigands[index] = highestLigand;
+                #index = index + 1
+                if (rightAnswer == True):
+                    correctPoses = correctPoses + 1
+                    
+    numTargets = numTargets + 1
+    if (rightAnswer == True):
+        correctPoses = correctPoses + 1
     print ("For top scoring ligands: percent of correct poses = " + str(correctPoses/numTargets) + "\n")
     return
 
