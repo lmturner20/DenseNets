@@ -119,7 +119,8 @@ if __name__ == '__main__':
 
     testfile = (args.prefix + "train0.types")
     caffemodel = (args.model + ".0_iter_100000.caffemodel")
-    results = evaluate_fold(testfile, caffemodel, modelname)
+    #results = evaluate_fold(testfile, caffemodel, modelname)
+    results = [(-7.0, 6.1, "4v27", "ligand1", 0.0, 0.15), (-7.0, 6.1, "4v27", "ligand2", 1.0, 0.30), (-7.0, 6.1, "4v27", "ligand3", 0.0, 0.21), (-7.0, 6.1, "4a29", "ligand1", 0.0, 0.13), (-7.0, 6.1, "4a29", "ligand2", 0.0, 0.14), (-7.0, 6.1, "4a29", "ligand3", 1.0, 0.42)]
     find_top_ligand(results)
     #print (results)
     #print analyze_results(results, args.prefix + ".results", "affinity")
