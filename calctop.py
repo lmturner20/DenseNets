@@ -76,62 +76,32 @@ def evaluate_fold(testfile, caffemodel, modelname):
     os.remove(test_model)
     return ret
 
+def find_top_ligand(results)
+	numTargets = results.length
+	currentTarget = ("")
+	highestLigands = [numTargets]
+	index = 0
+	correctPoses = 0
+	highestPose = 0
+	rightAnswer = false
 
-def analyze_results(results, outname, uniquify=None):
-    '''Compute error metrics from resuls.  RMSE, Pearson, Spearman.
-    If uniquify is set, AUC and top-1 percentage are also computed,
-    uniquify can be None, 'affinity', or 'pose' and is set with
-    the all training set to select the pose used for scoring.
-    Returns tuple:
-    (RMSE, Pearson, Spearman, AUCpose, AUCaffinity, top-1)
-    Writes (correct,prediction) pairs to outname.predictions
-    '''
-
-    #calc auc before reduction
-    if uniquify and len(results[0]) > 5:
-        labels = np.array([r[4] for r in results])
-        posescores = np.array([r[5] for r in results])
-        predictions = np.array([r[1] for r in results])
-        aucpose = sklearn.metrics.roc_auc_score(labels, posescores)
-        aucaff = sklearn.metrics.roc_auc_score(labels, predictions)
-
-    if uniquify == 'affinity':
-        results = reduce_results(results, 1)
-    elif uniquify == 'pose':
-        results = reduce_results(results, 5)
-
-    predictions = np.array([r[1] for r in results])
-    correctaff = np.array([abs(r[0]) for r in results])
-    #(correct, prediction, receptor, ligand, label (optional), posescore (optional))    
-
-    rmse = np.sqrt(sklearn.metrics.mean_squared_error(correctaff, predictions))
-    R = scipy.stats.pearsonr(correctaff, predictions)[0]
-    S = scipy.stats.spearmanr(correctaff, predictions)[0]
-    out = open('%s.predictions'%outname,'w')
-    for (c,p) in zip(correctaff,predictions):
-        out.write('%f %f\n' % (c,p))
-    out.write('#RMSD %f\n'%rmse)
-    out.write('#R %f\n'%R)
-
-    if uniquify and len(results[0]) > 5:
-        labels = np.array([r[4] for r in results])
-        top = np.count_nonzero(labels > 0)/float(len(labels))
-        return (rmse, R, S, aucpose, aucaff, top)
-    else:
-        return (rmse, R, S)
-    
-def reduce_results(results, index):
-    '''Return results with only one tuple for every receptor value,
-    taking the one with the max value at index in the tuple (predicted affinity or pose score)
-    '''
-    res = dict() #indexed by receptor
-    for r in results:
-        name = r[2]
-        if name not in res:
-            res[name] = r
-        elif res[name][index] < r[index]:
-            res[name] = r
-    return res.values()
+	for r in results:
+		if r[2] = currentTarget:
+			if r[5] > highestPose:
+				highestPose = r[5]
+				highestLigand = r[3]
+				if r[4] = 1:
+					rightAnswer = true
+				else:
+					rightAnswer = false
+		else:
+			currentTarget = r[2];
+			highestLigands[index] = highestLigand;
+			index++
+		if rightAnswer = true:
+			correctPoses++
+	print ("For top scoring ligands: percent of correct poses = " + correctPoses/numTargets + "\n")
+    return
 
 
 if __name__ == '__main__':
@@ -143,8 +113,10 @@ if __name__ == '__main__':
 
     testfile = (args.prefix + "train0.types")
     caffemodel = (args.model + ".0_iter_100000.caffemodel")
-    results = evaluate_fold(testfile, caffemodel, modelname)
-    print (results)
+    #results = evaluate_fold(testfile, caffemodel, modelname)
+    results = [ '8a3h/8a3h_ligand3_22.gninatypes', 0.0, 0.07919405400753021), (-4.055500030517578, 4.712827205657959, '8a3h/8a3h_rec.gninatypes', '8a3h/8a3h_ligand3_24.gninatypes', 0.0, 0.34352347254753113), (7.638299942016602, 6.938665390014648, '966c/966c_rec.gninatypes', '966c/966c_ligand3_0.gninatypes', 1.0, 0.9758247137069702), (-7.638299942016602, 4.961941242218018, '966c/966c_rec.gninatypes', '966c/966c_ligand3_1.gninatypes', 0.0, 0.02706882543861866), (-7.638299942016602, 5.282212257385254, '966c/966c_rec.gninatypes', '966c/966c_ligand3_2.gninatypes', 0.0, 0.04771214351058006), (-7.638299942016602, 5.643853187561035, '966c/966c_rec.gninatypes', '966c/966c_ligand3_5.gninatypes', 0.0, 0.15937583148479462), (-7.638299942016602, 6.056888580322266, '966c/966c_rec.gninatypes', '966c/966c_ligand3_11.gninatypes', 0.0, 0.7478074431419373), (-7.638299942016602, 5.352646827697754, '966c/966c_rec.gninatypes', '966c/966c_ligand3_13.gninatypes', 0.0, 0.08677862584590912), (-7.638299942016602, 6.0087738037109375, '966c/966c_rec.gninatypes', '966c/966c_ligand3_14.gninatypes', 0.0, 0.8416995406150818), (-7.638299942016602, 4.911555290222168, '966c/966c_rec.gninatypes', '966c/966c_ligand3_16.gninatypes', 0.0, 0.373503714799881), (-7.638299942016602, 5.491366863250732, '966c/966c_rec.gninatypes', '966c/966c_ligand3_17.gninatypes', 0.0, 0.36361685395240784), (-7.638299942016602, 6.7745819091796875, '966c/966c_rec.gninatypes', '966c/966c_ligand3_18.gninatypes', 0.0, 0.9699649214744568), (-7.638299942016602, 5.881802558898926, '966c/966c_rec.gninatypes', '966c/966c_ligand3_19.gninatypes', 0.0, 0.6239776015281677), (-7.638299942016602, 5.554421901702881, '966c/966c_rec.gninatypes', '966c/966c_ligand3_20.gninatypes', 0.0, 0.39980071783065796), (-7.638299942016602, 5.463313579559326, '966c/966c_rec.gninatypes', '966c/966c_ligand3_21.gninatypes', 0.0, 0.6280282139778137), (-7.638299942016602, 5.830012321472168, '966c/966c_rec.gninatypes', '966c/966c_ligand3_22.gninatypes', 0.0, 0.6617482304573059), (-7.638299942016602, 5.905783176422119, '966c/966c_rec.gninatypes', '966c/966c_ligand3_23.gninatypes', 0.0, 0.5545428395271301)]
+    find_top_ligand(results)
+    #print (results)
     #print analyze_results(results, args.prefix + ".results", "affinity")
     
     #testfile = (args.prefix + "train1.types")
