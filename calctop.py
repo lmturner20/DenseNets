@@ -76,7 +76,7 @@ def evaluate_fold(testfile, caffemodel, modelname):
     os.remove(test_model)
     return ret
 
-def find_top_ligand(results)
+def find_top_ligand(results):
 	numTargets = results.length
 	currentTarget = ("")
 	highestLigands = [numTargets]
