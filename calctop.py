@@ -86,11 +86,11 @@ def find_top_ligand(results):
 	rightAnswer = false
 
 	for r in results:
-		if (r[2] = currentTarget):
+		if (r[2] == currentTarget):
 			if (r[5] > highestPose):
 				highestPose = r[5]
 				highestLigand = r[3]
-				if (r[4] = 1):
+				if (r[4] == 1):
 					rightAnswer = true
 				else:
 					rightAnswer = false
@@ -98,7 +98,7 @@ def find_top_ligand(results):
 			currentTarget = r[2];
 			highestLigands[index] = highestLigand;
 			index = index + 1
-		if (rightAnswer = true):
+		if (rightAnswer == true):
 			correctPoses = correctPoses + 1
 	print ("For top scoring ligands: percent of correct poses = " + correctPoses/numTargets + "\n")
     return
