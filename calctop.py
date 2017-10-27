@@ -100,7 +100,7 @@ def find_top_ligand(results):
                 index = index + 1
             if (rightAnswer == True):
                 correctPoses = correctPoses + 1
-    print ("For top scoring ligands: percent of correct poses = " + correctPoses/numTargets + "\n")
+    print ("For top scoring ligands: percent of correct poses = " + str(correctPoses/numTargets) + "\n")
     return
 
 
