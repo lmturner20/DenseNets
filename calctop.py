@@ -133,6 +133,7 @@ def reduce_results(results, index):
             res[name] = r
     return res.values()
 
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-m','--model',type=str,required=True)
@@ -143,7 +144,8 @@ if __name__ == '__main__':
     testfile = (args.prefix + "train0.types")
     caffemodel = (args.model + ".0_iter_100000.caffemodel")
     results = evaluate_fold(testfile, caffemodel, modelname)
-    print analyze_results(results, args.prefix + ".results", "affinity")
+    print (results)
+    #print analyze_results(results, args.prefix + ".results", "affinity")
     
     #testfile = (args.prefix + "train1.types")
     #caffemodel = (args.model + ".1_iter_100000.caffemodel")
