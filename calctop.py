@@ -76,38 +76,28 @@ def evaluate_fold(testfile, caffemodel, modelname):
     os.remove(test_model)
     return ret
 
-def find_top_ligand(results):
-    numTargets = 0
-    currentTarget = ("")
-    #highestLigands = [numTargets]
-    #index = 0
-    correctPoses = 0
-    highestPose = 0
-    rightAnswer = False
+def find_top_ligand(results, topnum):
+    targets={}
+    num_targets = 0
+    correct_poses = 0
 
     for r in results:
-        if (r[2] == currentTarget):
-            if (r[5] > highestPose):
-                highestPose = r[5]
-                #highestLigand = r[3]
-                if (r[4] == 1):
-                    rightAnswer = True
-                else:
-                    rightAnswer = False
-            else:
-                currentTarget = r[2];
-                highestPose = 0
-                numTargets = numTargets + 1
-                #highestLigands[index] = highestLigand;
-                #index = index + 1
-                if (rightAnswer == True):
-                    correctPoses = correctPoses + 1
-                    
-    numTargets = numTargets + 1
-    if (rightAnswer == True):
-        correctPoses = correctPoses + 1
-    print ("For top scoring ligands: percent of correct poses = " + str(correctPoses/numTargets*1.0) + "\n")
-    return
+        if r[2] in targets.keys():
+            targets[r[2]].append((r[5], r[4]))
+        else:
+            targets[r[2]] = [(r[5], r[4])]
+
+    for t in targets.keys():
+        num_targets = num_targets + 1
+        targets[t].sort
+        top_tuples = targets[t][0:topnum]
+        for i in top_tuples:
+            if i[1] == 1:
+                correct_poses = correct_poses + 1
+                break
+
+    percent = correct_poses/num_targets*100
+    print ("Percent of targets that contain the correct pose in the top "+str(topnum)+": "+str(percent)+"%")
 
 
 if __name__ == '__main__':
@@ -119,18 +109,25 @@ if __name__ == '__main__':
 
     testfile = (args.prefix + "train0.types")
     caffemodel = (args.model + ".0_iter_100000.caffemodel")
-    #results = evaluate_fold(testfile, caffemodel, modelname)
-    results = [(-7.0, 6.1, "4v27", "ligand1", 0.0, 0.15), (-7.0, 6.1, "4v27", "ligand2", 1.0, 0.30), (-7.0, 6.1, "4v27", "ligand3", 0.0, 0.21), (-7.0, 6.1, "4a29", "ligand1", 0.0, 0.13), (-7.0, 6.1, "4a29", "ligand2", 0.0, 0.14), (-7.0, 6.1, "4a29", "ligand3", 1.0, 0.42)]
-    find_top_ligand(results)
-    #print (results)
-    #print analyze_results(results, args.prefix + ".results", "affinity")
-    
-    #testfile = (args.prefix + "train1.types")
-    #caffemodel = (args.model + ".1_iter_100000.caffemodel")
-    #result = evaluate_fold(testfile, caffemodel, modelname)
-    #print (result)
+    results = evaluate_fold(testfile, caffemodel, modelname)
+    print("0:")
+    find_top_ligand(results,1)
+    find_top_ligand(results,3)
+    find_top_ligand(results,5)
 
-    #testfile = (args.prefix + "train2.types")
-    #caffemodel = (args.model + ".2_iter_100000.caffemodel")
-    #result = evaluate_fold(testfile, caffemodel, modelname)
-    #print (result)
+    testfile = (args.prefix + "train1.types")
+    caffemodel = (args.model + ".1_iter_100000.caffemodel")
+    results = evaluate_fold(testfile, caffemodel, modelname)
+    print("1:")
+    find_top_ligand(results,1)
+    find_top_ligand(results,3)
+    find_top_ligand(results,5)
+
+    testfile = (args.prefix + "train2.types")
+    caffemodel = (args.model + ".2_iter_100000.caffemodel")
+    result = evaluate_fold(testfile, caffemodel, modelname)
+    print("2:")
+    find_top_ligand(results,1)
+    find_top_ligand(results,3)
+    find_top_ligand(results,5)
+
