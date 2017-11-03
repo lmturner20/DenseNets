@@ -110,6 +110,7 @@ if __name__ == '__main__':
     testfile = (args.prefix + "train0.types")
     caffemodel = (args.model + ".0_iter_100000.caffemodel")
     results = evaluate_fold(testfile, caffemodel, modelname)
+    print (args.prefix)
     print("0:")
     find_top_ligand(results,1)
     find_top_ligand(results,3)
