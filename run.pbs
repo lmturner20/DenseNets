@@ -1,0 +1,21 @@
+#!/bin/bash
+#PBS -N 2mod_nop_noc
+#PBS -j oe
+#PBS -l nodes=1:ppn=1:gpus=1
+#PBS -l walltime=24:00:00:00
+#PBS -q dept_gpu
+
+echo Running on `hostname`
+echo workdir $PBS_O_WORKDIR
+echo ld_library_path $LD_LIBRARY_PATH
+export PATH=/usr/bin:$PATH
+export LD_LIBRARY_PATH=/net/pulsar/home/koes/dkoes/local/lib:/usr/lib64:/usr/lib/x86_64-linux-gnu:/usr/local/cuda-8.0/lib64
+export PYTHONPATH=/net/pulsar/home/koes/dkoes/local/python:$PYTHONPATH
+
+cd $PBS_O_WORKDIR
+
+python ~/scripts/calctop.py -m dn_2mod_nopool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_
+
+$cmd
+
+exit
