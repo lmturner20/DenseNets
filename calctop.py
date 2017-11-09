@@ -4,6 +4,7 @@ import os, sys
 import os.path
 sys.path.append("/home/dkoes/git/gninascripts/")
 sys.path.append("/net/pulsar/home/koes/dkoes/git/gninascripts/")
+from pathlib import Path
 
 import train, predict
 import matplotlib, caffe
@@ -115,7 +116,8 @@ if __name__ == '__main__':
     iterations=args.iterations
     if iterations == 0:
         highest_iter=0
-        for name in glob.glob('dir/*.caffemodel'):
+        path=Path(args.caffemodel)
+        for name in glob.glob('*/*.caffemodel'):
             print(name)
             new_iter=int(filter(str.isdigit, name))
             if new_iter>highest_iter:
