@@ -121,7 +121,7 @@ if __name__ == '__main__':
                 highest_iter=new_iter
         iterations=highest_iter
         
-    model = (args.model)
+    modelname = (args.model)
     testfile = (args.prefix + "train0.types")
     output = (args.output)
 
