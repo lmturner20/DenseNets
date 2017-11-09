@@ -1,8 +1,8 @@
-python ~/scripts/calctop.py -m dn_2mod_nopool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ > ~/DenseNets/DenseNets/2npnc.txt &
-python ~/scripts/calctop.py -m dn_2mod_wpool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ > ~/DenseNets/DenseNets/2wpnc.txt &
-python ~/scripts/calctop.py -m dn_2mod_nopool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ > ~/DenseNets/DenseNets/2npwc.txt &
-python ~/scripts/calctop.py -m dn_2mod_wpool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ > ~/DenseNets/DenseNets/2wpwc.txt &
-python ~/scripts/calctop.py -m dn_3mod_nopool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ > ~/DenseNets/DenseNets/3npnc.txt &
-python ~/scripts/calctop.py -m dn_3mod_wpool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ > ~/DenseNets/DenseNets/3wpnc.txt &
-python ~/scripts/calctop.py -m dn_3mod_nopool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ > ~/DenseNets/DenseNets/3npwc.txt &
-python ~/scripts/calctop.py -m dn_3mod_wpool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ > ~/DenseNets/DenseNets/3wpwc.txt &
+python ~/scripts/calctop.py -m dn_2mod_nopool_noconcat.model -c dn_2mod_nopool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -o 2npnc.txt
+python ~/scripts/calctop.py -m dn_2mod_wpool_noconcat.model -c dn_2mod_wpool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -o 2wpnc.txt
+python ~/scripts/calctop.py -m dn_2mod_nopool_wconcat.model -c dn_2mod_nopool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -o 2npwc.txt
+python ~/scripts/calctop.py -m dn_2mod_wpool_wconcat.model -c dn_2mod_wpool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -o 2wpwc.txt
+python ~/scripts/calctop.py -m dn_3mod_nopool_noconcat.model -c dn_3mod_nopool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -o 3npnc.txt
+python ~/scripts/calctop.py -m dn_3mod_wpool_noconcat.model -c dn_3mod_wpool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -o 3wpnc.txt
+python ~/scripts/calctop.py -m dn_3mod_nopool_wconcat.model -c dn_3mod_nopool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -o 3npwc.txt
+python ~/scripts/calctop.py -m dn_3mod_wpool_wconcat.model -c dn_3mod_wpool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -o 3wpwc.txt
