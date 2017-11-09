@@ -1,6 +1,7 @@
 from Bio.PDB.PDBParser import PDBParser
 import numpy as np
 import os, sys
+import os.path
 sys.path.append("/home/dkoes/git/gninascripts/")
 sys.path.append("/net/pulsar/home/koes/dkoes/git/gninascripts/")
 
@@ -78,57 +79,88 @@ def evaluate_fold(testfile, caffemodel, modelname):
 
 def find_top_ligand(results, topnum):
     targets={}
-    num_targets = 0
-    correct_poses = 0
+    num_targets=len(targets)
+    correct_poses=0
+    ligands=[]
 
     for r in results:
         if r[2] in targets.keys():
-            targets[r[2]].append((r[5], r[4]))
+            targets[r[2]].append((r[5], r[4], r[3]))#also ligand
         else:
-            targets[r[2]] = [(r[5], r[4])]
+            targets[r[2]] = [(r[5], r[4], r[3])]
 
     for t in targets.keys():
-        num_targets = num_targets + 1
         targets[t].sort
         top_tuples = targets[t][0:topnum]
         for i in top_tuples:
             if i[1] == 1:
                 correct_poses = correct_poses + 1
+                ligands.append(i[2])
                 break
 
-    percent = correct_poses/num_targets*100
-    print ("Percent of targets that contain the correct pose in the top "+str(topnum)+": "+str(percent)+"%")
-
+    percent = correct_poses/num_targets*100.0
+    return (percent, ligands)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('-m','--model',type=str,required=True)
-    parser.add_argument('-p','--prefix',type=str,required=True) #same for caffemodel and test sets
+    parser.add_argument('-m','--model',type=str,required=True,help='Model filename')
+    parser.add_argument('-p','--prefix',type=str,required=True,help='Prefix for test files')
+    parser.add_argument('-c','--caffemodel',type=str,required=True,help='Prefix for caffemodel file')
+    parser.add_argument('-o','--output',type=str,required=True,help='Output filename')
+    parser.add_argument('-f','--folds',type=int,default=3,help='Number of folds')
+    parser.add_argument('i','--iterations',type=int,default=0,help='Iterations in caffemodel filename')
+    parser.add_argument('t','--top',type=int,default=0,help='Number of top ligands to look at')
     args = parser.parse_args()
-    modelname = (args.model + ".model")
 
+    iterations=args.iterations
+    if iterations == 0:
+        highest_iter=0
+        for name in glob.glob('dir/*.caffemodel'):
+            new_iter=int(filter(str.isdigit, name))
+            if new_iter>highest_iter:
+                highest_iter=new_iter
+        iterations=highest_iter
+        
+    model = (args.model)
     testfile = (args.prefix + "train0.types")
-    caffemodel = (args.model + ".0_iter_100000.caffemodel")
-    results = evaluate_fold(testfile, caffemodel, modelname)
-    print (args.prefix)
-    print("0:")
-    find_top_ligand(results,1)
-    find_top_ligand(results,3)
-    find_top_ligand(results,5)
+    output = (args.output)
 
-    testfile = (args.prefix + "train1.types")
-    caffemodel = (args.model + ".1_iter_100000.caffemodel")
-    results = evaluate_fold(testfile, caffemodel, modelname)
-    print("1:")
-    find_top_ligand(results,1)
+    results=[]
+    for f in fold:
+        caffemodel=(args.caffemodel+'.'+f+'_iter_'+iterations+'.caffemodel)
+        if !os.path.isfile(fname):
+            print ('Error: Caffemodel file does not exist. Check --caffemodel, --iterations, and --folds arguments.')
+        results += evaluate_fold(testfile, caffemodel, modelname)
+    
+    top = find_top_ligand(results,1)
+    file=open(output, "w")
+    write("Percent of targets that contain the correct pose in the top 1:"+str(top[0])+"%)"
+    write("Top ligands: ")
+    for l in top[1]:
+          write(l)
+    file.close()
+          
     find_top_ligand(results,3)
+    file=open(output, "a")
+    write("Percent of targets that contain the correct pose in the top 3:"+str(top[0])+"%)"
+    write("Top ligands: ")
+    for l in top[1]:
+          write(l)
+    file.close()
+          
     find_top_ligand(results,5)
-
-    testfile = (args.prefix + "train2.types")
-    caffemodel = (args.model + ".2_iter_100000.caffemodel")
-    results = evaluate_fold(testfile, caffemodel, modelname)
-    print("2:")
-    find_top_ligand(results,1)
-    find_top_ligand(results,3)
-    find_top_ligand(results,5)
-
+    file=open(output, "a")
+    write("Percent of targets that contain the correct pose in the top 5:"+str(top[0])+"%)"
+    write("Top ligands: ")
+    for l in top[1]:
+          write(l)
+    file.close()
+          
+    if args.top > 0:
+        find_top_ligand(results,args.top)
+        file=open(output, "a")
+        write("Percent of targets that contain the correct pose in the top"+args.top+":"+str(top[0])+"%)"
+        write("Top ligands: ")
+        for l in top[1]:
+            write(l)
+        file.close()
