@@ -125,13 +125,15 @@ if __name__ == '__main__':
     modelname = (args.model)
     testfile = (args.prefix + "train0.types")
     output = (args.output)
-
+'''
     results=[]
     for f in range(args.folds):
         caffemodel=(args.caffemodel+'.'+str(f)+'_iter_'+str(iterations)+'.caffemodel')
         if (os.path.isfile(caffemodel) == False):
             print ('Error: Caffemodel file does not exist. Check --caffemodel, --iterations, and --folds arguments.')
         results += evaluate_fold(testfile, caffemodel, modelname)
+ '''
+    results = [(-7.0, 6.1, "4v27", "ligand1", 1.0, 0.15), (-7.0, 6.1, "4v27", "ligand2", 0.0, 0.30), (-7.0, 6.1, "4v27", "ligand3", 0.0, 0.21), (-7.0, 6.1, "4a29", "ligand1", 0.0, 0.13), (-7.0, 6.1, "4a29", "ligand2", 0.0, 0.14), (-7.0, 6.1, "4a29", "ligand3", 0.0, 0.42)]
     
     top = find_top_ligand(results,1)
     file=open(output, "w")
