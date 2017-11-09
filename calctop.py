@@ -108,8 +108,8 @@ if __name__ == '__main__':
     parser.add_argument('-c','--caffemodel',type=str,required=True,help='Prefix for caffemodel file')
     parser.add_argument('-o','--output',type=str,required=True,help='Output filename')
     parser.add_argument('-f','--folds',type=int,default=3,help='Number of folds')
-    parser.add_argument('i','--iterations',type=int,default=0,help='Iterations in caffemodel filename')
-    parser.add_argument('t','--top',type=int,default=0,help='Number of top ligands to look at')
+    parser.add_argument('-i','--iterations',type=int,default=0,help='Iterations in caffemodel filename')
+    parser.add_argument('-t','--top',type=int,default=0,help='Number of top ligands to look at')
     args = parser.parse_args()
 
     iterations=args.iterations
