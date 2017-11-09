@@ -126,7 +126,7 @@ if __name__ == '__main__':
     output = (args.output)
 
     results=[]
-    for f in fold:
+    for f in range(args.folds):
         caffemodel=(args.caffemodel+'.'+str(f)+'_iter_'+str(iterations)+'.caffemodel')
         if (os.path.isfile(fname) == False):
             print ('Error: Caffemodel file does not exist. Check --caffemodel, --iterations, and --folds arguments.')
