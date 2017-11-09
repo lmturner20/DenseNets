@@ -134,7 +134,7 @@ if __name__ == '__main__':
     
     top = find_top_ligand(results,1)
     file=open(output, "w")
-    write("Percent of targets that contain the correct pose in the top 1:"+str(top[0])+"%)"
+    write("Percent of targets that contain the correct pose in the top 1:"+str(top[0])+"%")
     write("Top ligands: ")
     for l in top[1]:
           write(l)
