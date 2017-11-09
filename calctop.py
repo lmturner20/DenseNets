@@ -115,7 +115,7 @@ if __name__ == '__main__':
     iterations=args.iterations
     if iterations == 0:
         highest_iter=0
-        for name in glob.glob('dir/*.caffemodel'):
+        for name in glob.glob(args.caffemodel'/*.caffemodel'):
             new_iter=int(filter(str.isdigit, name))
             if new_iter>highest_iter:
                 highest_iter=new_iter
