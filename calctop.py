@@ -4,6 +4,7 @@ import os, sys
 import os.path
 sys.path.append("/home/dkoes/git/gninascripts/")
 sys.path.append("/net/pulsar/home/koes/dkoes/git/gninascripts/")
+import pathlib
 from pathlib import Path
 
 import train, predict
