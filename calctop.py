@@ -146,7 +146,7 @@ if __name__ == '__main__':
           file.write(l+"  ")
     file.write("\n")
     file.close()
-    '''
+
     find_top_ligand(results,3)
     file=open(output, "a")
     file.write("Percent of targets that contain the correct pose in the top 3:"+str(top[0])+"%\n")
@@ -174,4 +174,4 @@ if __name__ == '__main__':
             file.write(l+"  ")
         file.write("\n")
         file.close()
-    '''
+
