@@ -79,7 +79,7 @@ def evaluate_fold(testfile, caffemodel, modelname):
 
 def find_top_ligand(results, topnum):
     targets={}
-    num_targets=len(targets)
+    num_targets=0
     correct_poses=0
     ligands=[]
 
@@ -88,6 +88,8 @@ def find_top_ligand(results, topnum):
             targets[r[2]].append((r[5], r[4], r[3]))#also ligand
         else:
             targets[r[2]] = [(r[5], r[4], r[3])]
+            
+    num_targets = len(targets.keys())
 
     for t in targets.keys():
         targets[t].sort
