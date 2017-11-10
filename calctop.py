@@ -100,7 +100,6 @@ def find_top_ligand(results, topnum):
                 correct_poses = correct_poses + 1
                 ligands.append(i[2])
                 break
-            else: print i[2]
 
     percent = float(correct_poses)/float(num_targets)*100.0
     return (percent, ligands)
@@ -147,7 +146,7 @@ if __name__ == '__main__':
           file.write(l+"  ")
     file.write("\n")
     file.close()
-          
+    '''
     find_top_ligand(results,3)
     file=open(output, "a")
     file.write("Percent of targets that contain the correct pose in the top 3:"+str(top[0])+"%\n")
@@ -175,3 +174,4 @@ if __name__ == '__main__':
             file.write(l+"  ")
         file.write("\n")
         file.close()
+    '''
