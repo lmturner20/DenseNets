@@ -93,12 +93,13 @@ def find_top_ligand(results, topnum):
 
     for t in targets.keys():
         targets[t].sort
-        top_tuples = targets[t][0:topnum]
+        top_tuples = targets[t][0:topnum-1]
         for i in top_tuples:
             if i[1] == 1:
                 correct_poses = correct_poses + 1
                 ligands.append(i[2])
                 break
+            else: print i[2]
 
     percent = float(correct_poses)/float(num_targets)*100.0
     return (percent, ligands)
@@ -143,29 +144,33 @@ if __name__ == '__main__':
     file.write("Top ligands: ")
     for l in top[1]:
           file.write(l+"  ")
+    file.write("\n")
     file.close()
           
     find_top_ligand(results,3)
     file=open(output, "a")
-    file.write("\nPercent of targets that contain the correct pose in the top 3:"+str(top[0])+"%\n")
+    file.write("Percent of targets that contain the correct pose in the top 3:"+str(top[0])+"%\n")
     file.write("Top ligands: ")
     for l in top[1]:
           file.write(l+"  ")
+    file.write("\n")
     file.close()
           
     find_top_ligand(results,5)
     file=open(output, "a")
-    file.write("\nPercent of targets that contain the correct pose in the top 5:"+str(top[0])+"%\n")
+    file.write("Percent of targets that contain the correct pose in the top 5:"+str(top[0])+"%\n")
     file.write("Top ligands: ")
     for l in top[1]:
           file.write(l+"  ")
+    file.write("\n")
     file.close()
           
     if args.top > 0:
         find_top_ligand(results,args.top)
         file=open(output, "a")
-        file.write("\nPercent of targets that contain the correct pose in the top"+args.top+":"+str(top[0])+"%\n")
+        file.write("Percent of targets that contain the correct pose in the top"+args.top+":"+str(top[0])+"%\n")
         file.write("Top ligands: ")
         for l in top[1]:
             file.write(l+"  ")
+        file.write("\n")
         file.close()
