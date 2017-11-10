@@ -149,7 +149,7 @@ if __name__ == '__main__':
     file.write("\n")
     file.close()
 
-    find_top_ligand(results,3)
+    top = find_top_ligand(results,3)
     file=open(output, "a")
     file.write("Percent of targets that contain the correct pose in the top 3:"+str(top[0])+"%\n")
     file.write("Top ligands: ")
@@ -158,7 +158,7 @@ if __name__ == '__main__':
     file.write("\n")
     file.close()
           
-    find_top_ligand(results,5)
+    top = find_top_ligand(results,5)
     file=open(output, "a")
     file.write("Percent of targets that contain the correct pose in the top 5:"+str(top[0])+"%\n")
     file.write("Top ligands: ")
@@ -168,7 +168,7 @@ if __name__ == '__main__':
     file.close()
           
     if args.top > 0:
-        find_top_ligand(results,args.top)
+        top = find_top_ligand(results,args.top)
         file=open(output, "a")
         file.write("Percent of targets that contain the correct pose in the top"+args.top+":"+str(top[0])+"%\n")
         file.write("Top ligands: ")
