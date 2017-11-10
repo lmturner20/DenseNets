@@ -95,6 +95,7 @@ def find_top_ligand(results, topnum):
         targets[t].sort
         top_tuples = targets[t][0:topnum-1]
         for i in top_tuples:
+            print (i)
             if i[1] == 1:
                 correct_poses = correct_poses + 1
                 ligands.append(i[2])
