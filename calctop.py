@@ -93,7 +93,7 @@ def find_top_ligand(results, topnum):
 
     for t in targets.keys():
         targets[t].sort()
-        top_tuples = targets[t][len(targets[t])-topnum:len(targets[t])]
+        top_tuples = targets[t][len(targets[t])-topnum-1:len(targets[t])-1]
         for i in top_tuples:
             print (i)
             if i[1] == 1:
