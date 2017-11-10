@@ -135,11 +135,11 @@ if __name__ == '__main__':
             print ('Error: Caffemodel file does not exist. Check --caffemodel, --iterations, and --folds arguments.')
         results += evaluate_fold(testfile, caffemodel, modelname)
     '''
-    results = [(-7.0, 6.1, "4v27", "ligand1", 1.0, 0.15), (-7.0, 6.1, "4v27", "ligand2", 0.0, 0.30), (-7.0, 6.1, "4v27", "ligand3", 0.0, 0.21), (-7.0, 6.1, "4a29", "ligand1", 0.0, 0.13), (-7.0, 6.1, "4a29", "ligand2", 0.0, 0.14), (-7.0, 6.1, "4a29", "ligand3", 0.0, 0.42)]
+    results = [(-7.0, 6.1, "4v27", "ligand1", 1.0, 0.15), (-7.0, 6.1, "4v27", "ligand2", 0.0, 0.30), (-7.0, 6.1, "4v27", "ligand3", 0.0, 0.21), (-7.0, 6.1, "4a29", "ligand4", 0.0, 0.13), (-7.0, 6.1, "4a29", "ligand5", 0.0, 0.14), (-7.0, 6.1, "4a29", "ligand6", 1.0, 0.42)]
     
     top = find_top_ligand(results,1)
     file=open(output, "w")
-    file.write("Percent of targets that contain the correct pose in the top 1:"+str(top[0])+"%/n")
+    file.write("Percent of targets that contain the correct pose in the top 1:"+str(top[0])+"%\n")
     file.write("Top ligands: ")
     for l in top[1]:
           file.write(l+"  ")
@@ -147,7 +147,7 @@ if __name__ == '__main__':
           
     find_top_ligand(results,3)
     file=open(output, "a")
-    file.write("/nPercent of targets that contain the correct pose in the top 3:"+str(top[0])+"%/n")
+    file.write("\nPercent of targets that contain the correct pose in the top 3:"+str(top[0])+"%\n")
     file.write("Top ligands: ")
     for l in top[1]:
           file.write(l+"  ")
@@ -155,7 +155,7 @@ if __name__ == '__main__':
           
     find_top_ligand(results,5)
     file=open(output, "a")
-    file.write("/nPercent of targets that contain the correct pose in the top 5:"+str(top[0])+"%/n")
+    file.write("\nPercent of targets that contain the correct pose in the top 5:"+str(top[0])+"%\n")
     file.write("Top ligands: ")
     for l in top[1]:
           file.write(l+"  ")
@@ -164,7 +164,7 @@ if __name__ == '__main__':
     if args.top > 0:
         find_top_ligand(results,args.top)
         file=open(output, "a")
-        file.write("/nPercent of targets that contain the correct pose in the top"+args.top+":"+str(top[0])+"%/n")
+        file.write("\nPercent of targets that contain the correct pose in the top"+args.top+":"+str(top[0])+"%\n")
         file.write("Top ligands: ")
         for l in top[1]:
             file.write(l+"  ")
