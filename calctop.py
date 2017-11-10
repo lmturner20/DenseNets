@@ -102,6 +102,8 @@ def find_top_ligand(results, topnum):
                 break
 
     percent = float(correct_poses)/float(num_targets)*100.0
+    print correct_poses
+    print percent
     return (percent, ligands)
 
 if __name__ == '__main__':
