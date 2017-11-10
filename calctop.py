@@ -95,15 +95,12 @@ def find_top_ligand(results, topnum):
         targets[t].sort()
         top_tuples = targets[t][len(targets[t])-topnum:len(targets[t])]
         for i in top_tuples:
-            print (i)
             if i[1] == 1:
                 correct_poses = correct_poses + 1
                 ligands.append(i[2])
                 break
 
     percent = float(correct_poses)/float(num_targets)*100.0
-    print correct_poses
-    print percent
     return (percent, ligands)
 
 if __name__ == '__main__':
@@ -130,15 +127,13 @@ if __name__ == '__main__':
     modelname = (args.model)
     testfile = (args.prefix + "train0.types")
     output = (args.output)
-    '''
+
     results=[]
     for f in range(args.folds):
         caffemodel=(args.caffemodel+'.'+str(f)+'_iter_'+str(iterations)+'.caffemodel')
         if (os.path.isfile(caffemodel) == False):
             print ('Error: Caffemodel file does not exist. Check --caffemodel, --iterations, and --folds arguments.')
         results += evaluate_fold(testfile, caffemodel, modelname)
-    '''
-    results = [(-7.0, 6.1, "4v27", "ligand1", 1.0, 0.15), (-7.0, 6.1, "4v27", "ligand2", 0.0, 0.30), (-7.0, 6.1, "4v27", "ligand3", 0.0, 0.21), (-7.0, 6.1, "4a29", "ligand4", 0.0, 0.13), (-7.0, 6.1, "4a29", "ligand5", 0.0, 0.14), (-7.0, 6.1, "4a29", "ligand6", 1.0, 0.42)]
     
     top = find_top_ligand(results,1)
     file=open(output, "w")
