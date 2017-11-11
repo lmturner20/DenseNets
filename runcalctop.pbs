@@ -8,7 +8,7 @@
 echo Running on `hostname`
 echo workdir $PBS_O_WORKDIR
 echo ld_library_path $LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/net/pulsar/home/koes/dkoes/local/lib:/usr/lib64:/usr/lib/x86_64-linux-gnu:/usr/local/cuda-8.0/lib64export
+export LD_LIBRARY_PATH=/net/pulsar/home/koes/dkoes/local/lib:/usr/lib64:/usr/lib/x86_64-linux-gnu:/usr/local/cuda-8.0/lib64
 export PATH=/usr/bin:$PATH
 export PYTHONPATH=/net/pulsar/home/koes/dkoes/local/python:$PYTHONPATH
 #for some reason when the job starts on the node, it auto-cd's to your home dir
