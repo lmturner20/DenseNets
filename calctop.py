@@ -135,9 +135,9 @@ if __name__ == '__main__':
         testfile = (args.prefix + "train" + f + ".types")
         results += evaluate_fold(testfile, caffemodel, modelname)
     
-    for i in range[1:10]
-    top = find_top_ligand(results,i)
-    file=open(output, "a")
-    file.write("Percent of targets that contain the correct pose in the top "+i+": "+str(top)+"%\n")
-    file.close()
-    
+    for i in range(1, 11):
+        top = find_top_ligand(results,i)
+        file=open(output, "a")
+        file.write("Percent of targets that contain the correct pose in the top "+i+": "+str(top)+"%\n")
+        file.close()
+     
