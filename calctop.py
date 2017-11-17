@@ -117,7 +117,7 @@ if __name__ == '__main__':
     iterations=args.iterations
     if iterations == 0:
         highest_iter=0
-        for name in glob.glob('args.caffemodel+*.caffemodel'):
+        for name in glob.glob('*.caffemodel'):
             print name
             nums=(re.findall('\d+', name ))
             new_iter=nums[-1]
