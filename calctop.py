@@ -132,7 +132,7 @@ if __name__ == '__main__':
         caffemodel=(args.caffemodel+'.'+str(f)+'_iter_'+str(iterations)+'.caffemodel')
         if (os.path.isfile(caffemodel) == False):
             print ('Error: Caffemodel file does not exist. Check --caffemodel, --iterations, and --folds arguments.')
-        testfile = (args.prefix + "train" + f + ".types")
+        testfile = (args.prefix + "train" + str(f) + ".types")
         results += evaluate_fold(testfile, caffemodel, modelname)
     
     for i in range(1, 11):
