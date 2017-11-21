@@ -1,61 +1,56 @@
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_2mod_nopool_noconcat.model -c dn_2mod_nopool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -o 2npnc.txt -i 100000 --seed 0
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_2mod_nopool_noconcat.model -c dn_2mod_nopool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_1_ -o 2npnc.txt -i 100000 --seed 1
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_2mod_nopool_noconcat.model -c dn_2mod_nopool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_2_ -o 2npnc.txt -i 100000 --seed 2
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_2mod_nopool_noconcat.model -c dn_2mod_nopool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_3_ -o 2npnc.txt -i 100000 --seed 3
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_2mod_nopool_noconcat.model -c dn_2mod_nopool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_4_ -o 2npnc.txt -i 100000 --seed 4
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_2mod_nopool_noconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -o 2npnc -i 100000 --seed 0
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_2mod_nopool_noconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_1_ -o 2npnc -i 100000 --seed 1
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_2mod_nopool_noconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_2_ -o 2npnc -i 100000 --seed 2
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_2mod_nopool_noconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_3_ -o 2npnc -i 100000 --seed 3
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_2mod_nopool_noconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_4_ -o 2npnc -i 100000 --seed 4
 
 
-
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_2mod_wpool_noconcat.model -c dn_2mod_wpool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -o 2wpnc.txt -i 100000 --seed 0
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_2mod_wpool_noconcat.model -c dn_2mod_wpool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_1_ -o 2wpnc.txt -i 100000 --seed 1
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_2mod_wpool_noconcat.model -c dn_2mod_wpool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_2_ -o 2wpnc.txt -i 100000 --seed 2
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_2mod_wpool_noconcat.model -c dn_2mod_wpool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_3_ -o 2wpnc.txt -i 100000 --seed 3
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_2mod_wpool_noconcat.model -c dn_2mod_wpool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_4_ -o 2wpnc.txt -i 100000 --seed 4
-
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_2mod_wpool_noconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -o 2wpnc -i 100000 --seed 0
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_2mod_wpool_noconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_1_ -o 2wpnc -i 100000 --seed 1
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_2mod_wpool_noconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_2_ -o 2wpnc -i 100000 --seed 2
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_2mod_wpool_noconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_3_ -o 2wpnc -i 100000 --seed 3
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_2mod_wpool_noconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_4_ -o 2wpnc -i 100000 --seed 4
 
 
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_2mod_nopool_wconcat.model -c dn_2mod_nopool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -o 2npwc.txt -i 100000 --seed 0
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_2mod_nopool_wconcat.model -c dn_2mod_nopool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_1_ -o 2npwc.txt -i 100000 --seed 1
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_2mod_nopool_wconcat.model -c dn_2mod_nopool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_2_ -o 2npwc.txt -i 100000 --seed 2
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_2mod_nopool_wconcat.model -c dn_2mod_nopool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_3_ -o 2npwc.txt -i 100000 --seed 3
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_2mod_nopool_wconcat.model -c dn_2mod_nopool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_4_ -o 2npwc.txt -i 100000 --seed 4
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_2mod_nopool_wconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -o 2npwc -i 100000 --seed 0
+\python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_2mod_nopool_wconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_1_ -o 2npwc -i 100000 --seed 1
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_2mod_nopool_wconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_2_ -o 2npwc -i 100000 --seed 2
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_2mod_nopool_wconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_3_ -o 2npwc -i 100000 --seed 3
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_2mod_nopool_wconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_4_ -o 2npwc -i 100000 --seed 4
 
 
-
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_2mod_wpool_wconcat.model -c dn_2mod_wpool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -o 2wpwc.txt -i 100000 --seed 0
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_2mod_wpool_wconcat.model -c dn_2mod_wpool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_1_ -o 2wpwc.txt -i 100000 --seed 1
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_2mod_wpool_wconcat.model -c dn_2mod_wpool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_2_ -o 2wpwc.txt -i 100000 --seed 2
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_2mod_wpool_wconcat.model -c dn_2mod_wpool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_3_ -o 2wpwc.txt -i 100000 --seed 3
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_2mod_wpool_wconcat.model -c dn_2mod_wpool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_4_ -o 2wpwc.txt -i 100000 --seed 4
-
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_2mod_wpool_wconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -o 2wpwc -i 100000 --seed 0
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_2mod_wpool_wconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_1_ -o 2wpwc -i 100000 --seed 1
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_2mod_wpool_wconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_2_ -o 2wpwc -i 100000 --seed 2
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_2mod_wpool_wconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_3_ -o 2wpwc -i 100000 --seed 3
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_2mod_wpool_wconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_4_ -o 2wpwc -i 100000 --seed 4
 
 
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_3mod_nopool_noconcat.model -c dn_3mod_nopool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -o 3npnc.txt -i 100000 --seed 0
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_3mod_nopool_noconcat.model -c dn_3mod_nopool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_1_ -o 3npnc.txt -i 100000 --seed 1
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_3mod_nopool_noconcat.model -c dn_3mod_nopool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_2_ -o 3npnc.txt -i 100000 --seed 2
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_3mod_nopool_noconcat.model -c dn_3mod_nopool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_3_ -o 3npnc.txt -i 100000 --seed 3
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_3mod_nopool_noconcat.model -c dn_3mod_nopool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_4_ -o 3npnc.txt -i 100000 --seed 4
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_3mod_nopool_noconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -o 3npnc -i 100000 --seed 0
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_3mod_nopool_noconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_1_ -o 3npnc -i 100000 --seed 1
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_3mod_nopool_noconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_2_ -o 3npnc -i 100000 --seed 2
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_3mod_nopool_noconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_3_ -o 3npnc -i 100000 --seed 3
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_3mod_nopool_noconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_4_ -o 3npnc -i 100000 --seed 4
 
 
-
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_3mod_wpool_noconcat.model -c dn_3mod_wpool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -o 3wpnc.txt -i 100000 --seed 0
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_3mod_wpool_noconcat.model -c dn_3mod_wpool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_1_ -o 3wpnc.txt -i 100000 --seed 1
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_3mod_wpool_noconcat.model -c dn_3mod_wpool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_2_ -o 3wpnc.txt -i 100000 --seed 2
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_3mod_wpool_noconcat.model -c dn_3mod_wpool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_3_ -o 3wpnc.txt -i 100000 --seed 3
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_3mod_wpool_noconcat.model -c dn_3mod_wpool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_4_ -o 3wpnc.txt -i 100000 --seed 4
-
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_3mod_wpool_noconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -o 3wpnc -i 100000 --seed 0
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_3mod_wpool_noconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_1_ -o 3wpnc -i 100000 --seed 1
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_3mod_wpool_noconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_2_ -o 3wpnc -i 100000 --seed 2
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_3mod_wpool_noconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_3_ -o 3wpnc -i 100000 --seed 3
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_3mod_wpool_noconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_4_ -o 3wpnc -i 100000 --seed 4
 
 
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_3mod_nopool_wconcat.model -c dn_3mod_nopool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -o 3npwc.txt -i 100000 --seed 0
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_3mod_nopool_wconcat.model -c dn_3mod_nopool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_1_ -o 3npwc.txt -i 100000 --seed 1
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_3mod_nopool_wconcat.model -c dn_3mod_nopool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_2_ -o 3npwc.txt -i 100000 --seed 2
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_3mod_nopool_wconcat.model -c dn_3mod_nopool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_3_ -o 3npwc.txt -i 100000 --seed 3
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_3mod_nopool_wconcat.model -c dn_3mod_nopool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_4_ -o 3npwc.txt -i 100000 --seed 4
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_3mod_nopool_wconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -o 3npwc -i 100000 --seed 0
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_3mod_nopool_wconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -o 3npwc -i 100000 --seed 1
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_3mod_nopool_wconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -o 3npwc -i 100000 --seed 2
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_3mod_nopool_wconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -o 3npwc -i 100000 --seed 3
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_3mod_nopool_wconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -o 3npwc -i 100000 --seed 4
 
 
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_3mod_wpool_wconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -o 3wpwc -i 100000 --seed 0
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_3mod_wpool_wconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_1_ -o 3wpwc -i 100000 --seed 1
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_3mod_wpool_wconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_2_ -o 3wpwc -i 100000 --seed 2
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_3mod_wpool_wconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_3_ -o 3wpwc -i 100000 --seed 3
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_3mod_wpool_wconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_4_ -o 3wpwc -i 100000 --seed 4
 
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_3mod_wpool_wconcat.model -c dn_3mod_wpool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -o 3wpwc.txt -i 100000 --seed 0
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_3mod_wpool_wconcat.model -c dn_3mod_wpool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_1_ -o 3wpwc.txt -i 100000 --seed 1
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_3mod_wpool_wconcat.model -c dn_3mod_wpool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_2_ -o 3wpwc.txt -i 100000 --seed 2
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_3mod_wpool_wconcat.model -c dn_3mod_wpool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_3_ -o 3wpwc.txt -i 100000 --seed 3
-python /net/pulsar/home/koes/lmt72/scripts/calctop.py -m dn_3mod_wpool_wconcat.model -c dn_3mod_wpool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_4_ -o 3wpwc.txt -i 100000 --seed 4
+
