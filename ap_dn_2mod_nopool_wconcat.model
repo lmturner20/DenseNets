@@ -1,3 +1,6 @@
+#this model has two modules that are not separated by a pooling layer
+#this model has concat layers
+
 # "/home/dkoes/PDBbind/refined-set" - use on Apogee/Perigee
 # "/net/pulsar/home/koes/dkoes/PDBbind/refined-set" - use on the Cluster
 
