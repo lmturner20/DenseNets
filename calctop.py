@@ -85,7 +85,7 @@ def find_top_ligand(results, topnum):
     for r in results:
         if r[2] in targets:
             targets[r[2]].append((r[5], r[4]))
-            if r[5] == null:
+            if r[5] == None:
                 print ("Error: Posescore does not exist for "+r[2])
                 exit()
         else:
@@ -94,7 +94,7 @@ def find_top_ligand(results, topnum):
 
     for t in targets:
         targets[t].sort()
-        top_tuples = targets[t][-topnum]
+        top_tuples = targets[t][-topnum:topnum]
         for i in top_tuples:
             if i[1] == 1:
                 correct_poses = correct_poses + 1
