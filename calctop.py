@@ -83,7 +83,7 @@ def find_top_ligand(results, topnum):
     ligands=[]
 
     for r in results:
-        if r[2] in targets():
+        if r[2] in targets:
             targets[r[2]].append((r[5], r[4]))
             if r[5] == null:
                 print ("Error: Posescore does not exist for "+r[2])
@@ -92,7 +92,7 @@ def find_top_ligand(results, topnum):
             targets[r[2]] = [(r[5], r[4])]      
     num_targets=len(targets)
 
-    for t in targets():
+    for t in targets:
         targets[t].sort()
         top_tuples = targets[t][-topnum]
         for i in top_tuples:
