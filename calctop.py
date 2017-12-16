@@ -94,7 +94,7 @@ def find_top_ligand(results, topnum):
 
     for t in targets:
         targets[t].sort()
-        top_tuples = targets[t][-topnum:topnum]
+        top_tuples = targets[t][-topnum:]
         for i in top_tuples:
             if i[1] == 1:
                 correct_poses = correct_poses + 1
