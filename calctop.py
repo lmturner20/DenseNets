@@ -138,6 +138,6 @@ if __name__ == '__main__':
     for i in range(1, 11):
         top = find_top_ligand(results,i)
         file=open(output, "a")
-        file.write("Percent of targets that contain the correct pose in the top "+i+": "+str(top)+"%\n")
+        file.write("Percent of targets that contain the correct pose in the top "+str(i)+": "+str(top)+"%\n")
         file.close()
      
