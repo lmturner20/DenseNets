@@ -531,8 +531,8 @@ layer {
     scale: 0.1
     gap: 1
     penalty: 0
-    pseudohuber: false
-    delta: 0
+    pseudohuber: true
+    delta: 4
   }
 }
 
