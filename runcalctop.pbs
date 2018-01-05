@@ -14,7 +14,7 @@ export PYTHONPATH=/net/pulsar/home/koes/dkoes/local/python:$PYTHONPATH
 #for some reason when the job starts on the node, it auto-cd's to your home dir
 cd $PBS_O_WORKDIR
 
-cmd=`sed -n "${PBS_ARRAYID}p" cmds`
+cmd=`sed -n "${PBS_ARRAYID}p" cmdsc`
 echo $cmd
 $cmd 
 
