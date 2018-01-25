@@ -1,5 +1,5 @@
 #!/bin/bash
-#PBS -N calctop
+#PBS -N runtrain
 #PBS -j oe
 #PBS -l nodes=1:ppn=1:gpus=8
 #PBS -l walltime=24:00:00:00
@@ -13,15 +13,9 @@ export LD_LIBRARY_PATH=/net/pulsar/home/koes/dkoes/local/lib:/usr/lib64:/usr/lib
 export PYTHONPATH=/net/pulsar/home/koes/dkoes/local/python:$PYTHONPATH
 
 cd $PBS_O_WORKDIR
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_2mod_nopool_noconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -t 1000 --reduced -o 2npnc1_0_1 -i 100000 --seed 0 --clip_gradients 0.1
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_2mod_nopool_noconcat.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -t 1000 --reduced -o 2npnc1_1 -i 100000 --seed 0 --clip_gradients 1.0
 
-python ~/scripts/calctop.py -m dn_2mod_nopool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ > ~/DenseNets/DenseNets/2npnc.txt &
-python ~/scripts/calctop.py -m dn_2mod_wpool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ > ~/DenseNets/DenseNets/2wpnc.txt &
-python ~/scripts/calctop.py -m dn_2mod_nopool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ > ~/DenseNets/DenseNets/2npwc.txt &
-python ~/scripts/calctop.py -m dn_2mod_wpool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ > ~/DenseNets/DenseNets/2wpwc.txt &
-python ~/scripts/calctop.py -m dn_3mod_nopool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ > ~/DenseNets/DenseNets/3npnc.txt &
-python ~/scripts/calctop.py -m dn_3mod_wpool_noconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ > ~/DenseNets/DenseNets/3wpnc.txt &
-python ~/scripts/calctop.py -m dn_3mod_nopool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ > ~/DenseNets/DenseNets/3npwc.txt &
-python ~/scripts/calctop.py -m dn_3mod_wpool_wconcat -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ > ~/DenseNets/DenseNets/3wpwc.txt &
 wait
 
 $cmd
