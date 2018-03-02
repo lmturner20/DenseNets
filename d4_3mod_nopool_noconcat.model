@@ -525,7 +525,7 @@ layer {
 }
 
 layer {
-  name: "unit4_norm"
+  name: "unit4_norm3"
   type: "LRN"
   bottom: "unit4_conv3"
   top: "unit4_conv3"
