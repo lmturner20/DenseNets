@@ -350,7 +350,7 @@ layer {
   name: "unit4_conv2"
   type: "Convolution"
   bottom: "unit2_conv2"
-  top: "unit3_conv2"
+  top: "unit4_conv2"
   convolution_param {
     num_output: 32
     pad: 1
@@ -512,7 +512,7 @@ layer {
   name: "unit4_conv3"
   type: "Convolution"
   bottom: "unit2_conv3"
-  top: "unit3_conv3"
+  top: "unit4_conv3"
   convolution_param {
     num_output: 32
     pad: 1
