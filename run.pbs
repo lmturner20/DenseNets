@@ -13,7 +13,7 @@ export LD_LIBRARY_PATH=/net/pulsar/home/koes/dkoes/local/lib:/usr/lib64:/usr/lib
 export PYTHONPATH=/net/pulsar/home/koes/dkoes/local/python:$PYTHONPATH
 
 cd $PBS_O_WORKDIR
-python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_121.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -t 1000 --reduced -o python /net/pulsar/home/koes/lmt72/DenseNets/DenseNets/four/dn_121 -i 500000 --clip_gradients 10
+python /net/pulsar/home/koes/lmt72/scripts/train.py -m dn_121.model -p /net/pulsar/home/koes/dkoes/PDBbind/refined-set/affinity_search/types/all_0.5_0_ -t 1000 --reduced -o python /net/pulsar/home/koes/lmt72/DenseNets/DenseNets/four/dn_121 -i 50000 --clip_gradients 10
 wait
 
 $cmd
