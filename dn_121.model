@@ -8645,7 +8645,7 @@ layer {
 layer {
   name: "unit4_concat3"
   bottom: "unit4_conv2"
-  bottom: "unit4_concat2"
+  bottom: "unit4_conv1"
   top: "unit4_concat3"
   type: "Concat"
   concat_param {
