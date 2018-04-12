@@ -8515,10 +8515,10 @@ layer {
   top: "unit3_conv96"
 }
 layer {
-  name: "unit2_conv97"
+  name: "unit3_conv97"
   type: "Convolution"
-  bottom: "unit2_conv96"
-  top: "unit2_conv97"
+  bottom: "unit3_conv96"
+  top: "unit3_conv97"
   convolution_param {
     num_output: 32
     pad: 1
@@ -8533,15 +8533,15 @@ layer {
 layer {
   name: "unit3_norm"
   type: "LRN"
-  bottom: "unit2_conv97"
-  top: "unit2_conv97"
+  bottom: "unit3_conv97"
+  top: "unit3_conv97"
 }
 
 layer {
  name: "unit3_scale"
  type: "Scale"
- bottom: "unit2_conv97"
- top: "unit2_conv97"
+ bottom: "unit3_conv97"
+ top: "unit3_conv97"
  scale_param {
   bias_term: true
  }
@@ -8550,8 +8550,8 @@ layer {
 layer {
   name: "unit3_func"
   type: "ELU"
-  bottom: "unit2_conv97"
-  top: "unit2_conv97"
+  bottom: "unit3_conv97"
+  top: "unit3_conv97"
 }
 layer {
   name: "unit3_pool1"
