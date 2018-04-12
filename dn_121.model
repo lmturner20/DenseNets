@@ -8742,7 +8742,7 @@ layer {
 }
 layer {
   name: "unit4_concat5"
-  bottom: "unit4_concat3"
+  bottom: "unit4_conv4"
   bottom: "unit4_concat4"
   top: "unit4_concat5"
   type: "Concat"
