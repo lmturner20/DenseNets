@@ -8751,6 +8751,55 @@ layer {
   }
 }
 layer {
+  name: "unit4_conv5"
+  type: "Convolution"
+  bottom: "unit4_concat4"
+  top: "unit4_conv5"
+  convolution_param {
+    num_output: 32
+    pad: 1
+    kernel_size: 1
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+  }
+}
+
+layer {
+  name: "unit4_norm"
+  type: "LRN"
+  bottom: "unit4_conv5"
+  top: "unit4_conv5"
+}
+
+layer {
+ name: "unit4_scale"
+ type: "Scale"
+ bottom: "unit4_conv5"
+ top: "unit4_conv5"
+ scale_param {
+  bias_term: true
+ }
+}
+
+layer {
+  name: "unit4_func"
+  type: "ELU"
+  bottom: "unit4_conv5"
+  top: "unit4_conv5"
+}
+layer {
+  name: "unit4_concat6"
+  bottom: "unit4_conv5"
+  bottom: "unit4_concat5"
+  top: "unit4_concat6"
+  type: "Concat"
+  concat_param {
+    axis: 1
+  }
+}
+layer {
   name: "unit4_conv6"
   type: "Convolution"
   bottom: "unit4_concat6"
