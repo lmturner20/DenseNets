@@ -284,55 +284,6 @@ layer {
 layer {
   name: "unit1_conv5"
   type: "Convolution"
-  bottom: "unit1_concat5"
-  top: "unit1_conv5"
-  convolution_param {
-    num_output: 32
-    pad: 1
-    kernel_size: 3
-    stride: 1
-    weight_filler {
-      type: "xavier"
-    }
-  }
-}
-
-layer {
-  name: "unit1_norm"
-  type: "LRN"
-  bottom: "unit1_conv5"
-  top: "unit1_conv5"
-}
-
-layer {
- name: "unit1_scale"
- type: "Scale"
- bottom: "unit1_conv5"
- top: "unit1_conv5"
- scale_param {
-  bias_term: true
- }
-}
-
-layer {
-  name: "unit1_func"
-  type: "ELU"
-  bottom: "unit1_conv5"
-  top: "unit1_conv5"
-}
-layer {
-  name: "unit1_concat5"
-  bottom: "unit1_conv4"
-  bottom: "unit1_concat4"
-  top: "unit1_concat5"
-  type: "Concat"
-  concat_param {
-    axis: 1
-  }
-}
-layer {
-  name: "unit1_conv5"
-  type: "Convolution"
   bottom: "unit1_concat4"
   top: "unit1_conv5"
   convolution_param {
@@ -1525,55 +1476,6 @@ layer {
   type: "ELU"
   bottom: "unit2_conv4"
   top: "unit2_conv4"
-}
-layer {
-  name: "unit2_concat5"
-  bottom: "unit2_conv4"
-  bottom: "unit2_concat4"
-  top: "unit2_concat5"
-  type: "Concat"
-  concat_param {
-    axis: 1
-  }
-}
-layer {
-  name: "unit2_conv5"
-  type: "Convolution"
-  bottom: "unit2_concat5"
-  top: "unit2_conv5"
-  convolution_param {
-    num_output: 32
-    pad: 1
-    kernel_size: 3
-    stride: 1
-    weight_filler {
-      type: "xavier"
-    }
-  }
-}
-
-layer {
-  name: "unit2_norm"
-  type: "LRN"
-  bottom: "unit2_conv5"
-  top: "unit2_conv5"
-}
-
-layer {
- name: "unit2_scale"
- type: "Scale"
- bottom: "unit2_conv5"
- top: "unit2_conv5"
- scale_param {
-  bias_term: true
- }
-}
-
-layer {
-  name: "unit2_func"
-  type: "ELU"
-  bottom: "unit2_conv5"
-  top: "unit2_conv5"
 }
 layer {
   name: "unit2_concat5"
@@ -3956,55 +3858,6 @@ layer {
   type: "ELU"
   bottom: "unit3_conv4"
   top: "unit3_conv4"
-}
-layer {
-  name: "unit3_concat5"
-  bottom: "unit3_conv4"
-  bottom: "unit3_concat4"
-  top: "unit3_concat5"
-  type: "Concat"
-  concat_param {
-    axis: 1
-  }
-}
-layer {
-  name: "unit3_conv5"
-  type: "Convolution"
-  bottom: "unit3_concat5"
-  top: "unit3_conv5"
-  convolution_param {
-    num_output: 32
-    pad: 1
-    kernel_size: 3
-    stride: 1
-    weight_filler {
-      type: "xavier"
-    }
-  }
-}
-
-layer {
-  name: "unit3_norm"
-  type: "LRN"
-  bottom: "unit3_conv5"
-  top: "unit3_conv5"
-}
-
-layer {
- name: "unit3_scale"
- type: "Scale"
- bottom: "unit3_conv5"
- top: "unit3_conv5"
- scale_param {
-  bias_term: true
- }
-}
-
-layer {
-  name: "unit3_func"
-  type: "ELU"
-  bottom: "unit3_conv5"
-  top: "unit3_conv5"
 }
 layer {
   name: "unit3_concat5"
