@@ -9,7 +9,7 @@ layer {
   }
   molgrid_data_param {
     source: "TESTFILE"
-    batch_size: 10
+    batch_size: 5
     dimension: 23.5
     resolution: 0.5
     shuffle: false
